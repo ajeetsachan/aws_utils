@@ -6,16 +6,12 @@ require 'aws_utils'
 require 'pry'
 require 'rspec/expectations'
 
-# Requires supporting files with custom matchers and macros, etc,
-# in ./support/ and its subdirectories.
-# Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
-
 def require_dependencies
   `pwd`
   ['lib'].each do |folder|
-    puts "foldeR: #{folder}"
+    puts "Folder: #{folder}"
     Dir.glob(File.join("./", "#{folder}", "**", "*.rb")) do |file|
-      puts "file: #{file}"
+      puts "\tFile: #{file}"
       require file
     end
   end

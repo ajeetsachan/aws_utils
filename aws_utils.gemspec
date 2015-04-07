@@ -27,9 +27,9 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "aws_utils.gemspec",
+    "lib/archiver.rb",
     "lib/aws_utils.rb",
-    "lib/utils.rb",
-    "lib/zip.rb",
+    "lib/loader.rb",
     "spec/aws_utils_spec.rb",
     "spec/resources/input-data.yml",
     "spec/spec_helper.rb"
