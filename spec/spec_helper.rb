@@ -25,7 +25,7 @@ def before_each_spec(config)
   config.before(:each) { |s|
     puts "\nRunning spec: '#{s.example_group.metadata[:full_description]}'"
     $validation_errors = []
-    Utils.initialize
+    Loader.initialize
   }
 end
 

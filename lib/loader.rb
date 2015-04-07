@@ -1,6 +1,6 @@
 require 'yaml'
 
-module Utils
+module Loader
   @@input_data = {}
   @@cleanup_list = []
 

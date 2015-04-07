@@ -4,7 +4,7 @@ module EC2
 
   def self.initialize input_file_name
     puts "EC2: Initializing from: #{input_file_name}"
-    Utils.load_and_sanitize(input_file_name)
+    Loader.load_and_sanitize(input_file_name)
   end
 
   def self.upload_to_s3 archive_name
@@ -38,7 +38,7 @@ module EC2
   end
 
   def self.get_aws_info_from_input_data
-    input_data = Utils.loaded_input_data
+    input_data = Loader.loaded_input_data
     aws_info = input_data[:from_environment]
     bucket_name = aws_info[:bucket_name]
     key = aws_info[:key]
