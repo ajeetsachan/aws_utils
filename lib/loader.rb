@@ -25,8 +25,8 @@ module Loader
 
   def self.load_input_data_from(file)
     file += ".yml" if !file.end_with?(".yml")
-    puts "Loading file: spec/resources/#{file}"
-    loaded_input_data = YAML.load(File.open("spec/resources/#{file}"))
+    puts "Loading file: #{file}"
+    loaded_input_data = YAML.load(File.open("#{file}"))
     symbolized_keys_input_data = symbolize_keys_in_hash(loaded_input_data)
     symbolized_keys_input_data[:from_environment] = update_loaded_data_from_environment (symbolized_keys_input_data[:from_environment])
     puts "Loaded input data after updating from Environment Variables: \n#{symbolized_keys_input_data.inspect}"
