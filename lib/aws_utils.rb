@@ -1,6 +1,12 @@
 require 'aws-sdk'
 
 module EC2
+
+  def self.initialize input_file_name
+    puts "EC2: Initializing from: #{input_file_name}"
+    Utils.load_and_sanitize(input_file_name)
+  end
+
   def self.upload_to_s3 archive_name
     begin
       bucket_name, key = get_aws_info_from_input_data

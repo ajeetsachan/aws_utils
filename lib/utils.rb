@@ -4,6 +4,11 @@ module Utils
   @@input_data = {}
   @@cleanup_list = []
 
+  def self.initialize
+    @@input_data = {}
+    @@cleanup_list = []
+  end
+
   def self.load_and_sanitize(test_data_file_name)
     @@input_data = load_input_data_from(test_data_file_name)
     @@input_data[:root_directory] = File.expand_path(@@input_data[:root_directory])
@@ -18,8 +23,9 @@ module Utils
   end
 
   def self.load_input_data_from(file)
-    puts "Loading file: spec/resources/#{file}.yml"
-    loaded_input_data = YAML.load(File.open("spec/resources/#{file}.yml"))
+    file += ".yml" if !file.end_with?(".yml")
+    puts "Loading file: spec/resources/#{file}"
+    loaded_input_data = YAML.load(File.open("spec/resources/#{file}"))
     symbolized_keys_input_data = symbolize_keys_in_hash(loaded_input_data)
     symbolized_keys_input_data[:from_environment] = update_loaded_data_from_environment (symbolized_keys_input_data[:from_environment])
     puts "Loaded input data after updating from Environment Variables: \n#{symbolized_keys_input_data.inspect}"
