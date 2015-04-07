@@ -1,6 +1,6 @@
 = aws_utils
 
-Description goes here.
+Utility methods - like upload / download to and from AWS S3
 
 == Contributing to aws_utils
  
@@ -14,6 +14,11 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2015 Anand Bagmar. See LICENSE.txt for
-further details.
+Copyright (c) 2015 Anand Bagmar. See LICENSE.txt for further details.
 
+* Created by: Anand Bagmar
+* Email: abagmar@gmail.com
+*
+* Copyright 2010 Anand Bagmar.  Distributed under the Apache 2.0 License
+*
+* See LICENSE.txt for further details.
