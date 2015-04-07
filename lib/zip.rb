@@ -1,5 +1,6 @@
-module Zip
+require 'loader'
 
+module Zip
   def self.archive_code
     loaded_input_data = Loader.loaded_input_data
 

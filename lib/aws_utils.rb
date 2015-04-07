@@ -1,7 +1,7 @@
 require 'aws-sdk'
+require 'loader'
 
 module EC2
-
   def self.initialize input_file_name
     puts "EC2: Initializing from: #{input_file_name}"
     Loader.load_and_sanitize(input_file_name)
@@ -44,5 +44,4 @@ module EC2
     key = aws_info[:key]
     return bucket_name, key
   end
-
 end
