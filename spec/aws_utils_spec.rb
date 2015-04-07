@@ -22,7 +22,7 @@ end
 describe 'Download', :download do
   context "file from from S3" do
     it "should download zip file from S3" do
-      # EC2.initialize("input-data")
+      EC2.initialize("input-data")
       EC2.get_from_s3
     end
   end
