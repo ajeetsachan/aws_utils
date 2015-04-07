@@ -19,6 +19,7 @@ module Utils
   end
 
   def self.loaded_input_data
+    raise "Provide input data file" if (@@input_data.empty?)
     @@input_data
   end
 
