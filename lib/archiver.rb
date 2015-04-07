@@ -23,7 +23,7 @@ module Archiver
   private
 
   def self.create_version_file loaded_input_data
-    absolute_version_file_path = "#{File.join(loaded_input_data[:root_directory],loaded_input_data[:version_file_name])}"
+    absolute_version_file_path = "#{File.join(loaded_input_data[:root_directory], loaded_input_data[:version_file_name])}"
     file_contents = "#{loaded_input_data[:version_file_name]}"
     file_contents += "\nCreated at: #{Time.now.utc}"
     file_contents += "\n#{loaded_input_data[:upload].inspect}"
