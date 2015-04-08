@@ -52,7 +52,7 @@ module Loader
   private
   def self.update_loaded_data_from_environment (data_from_env)
     data_from_env.each { |key, value|
-      if ((value == "<UPDATE_AT_RUNTIME>") && (!ENV[key.to_s].nil?))
+      if ((value == "<UPDATE_AT_RUNTIME>") || (!ENV[key.to_s].nil?))
         data_from_env[key] = ENV[key.to_s]
       elsif (value.class == Hash)
         data_from_env[key] = update_loaded_data_from_environment (value)
