@@ -12,8 +12,8 @@ module Archiver
       File.delete(absolute_zip_file_name)
     end
     loaded_input_data[:upload][:include_list].each { |file_or_dir|
-      puts "\tzip -r #{loaded_input_data[:upload][:zip_file_name]} #{file_or_dir}"
-      `pwd; cd #{loaded_input_data[:root_directory]}; pwd; zip -r #{loaded_input_data[:upload][:zip_file_name]} #{file_or_dir}`
+      puts "\tzip -r #{loaded_input_data[:from_environment][:key]} #{file_or_dir}"
+      `pwd; cd #{loaded_input_data[:root_directory]}; pwd; zip -r #{loaded_input_data[:from_environment][:key]} #{file_or_dir}`
     }
     puts "Code archived in: #{absolute_zip_file_name}"
     Loader.add_to_cleanup_list absolute_zip_file_name

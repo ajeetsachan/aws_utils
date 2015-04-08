@@ -12,7 +12,7 @@ module Loader
   def self.load_and_sanitize(test_data_file_name)
     @@input_data = load_input_data_from(test_data_file_name)
     @@input_data[:root_directory] = File.expand_path(@@input_data[:root_directory])
-    absolute_zip_file_name = "#{File.join(@@input_data[:root_directory], @@input_data[:upload][:zip_file_name])}"
+    absolute_zip_file_name = "#{File.join(@@input_data[:root_directory], @@input_data[:from_environment][:key])}"
     @@input_data[:upload][:include_list] << @@input_data[:version_file_name]
     @@input_data[:upload]["absolute_zip_file_name".to_sym] = absolute_zip_file_name
     @@input_data
