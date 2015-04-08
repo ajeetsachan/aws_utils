@@ -3,8 +3,6 @@ version_file_name: manifest.txt
 upload:
   delete_from_local_after_upload: true
   include_list: [lib,spec,.gitignore,.rspec,.aws_utils.gemspec,Gemfile,LICENSE.txt,Rakefile,README.rdoc,VERSION]
-download:
-  file_name: archive.zip
 from_environment:
   bucket_name: <UPDATE_AT_RUNTIME>
   key: archive.zip
