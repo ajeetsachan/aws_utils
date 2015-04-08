@@ -2,7 +2,7 @@ require 'aws-sdk'
 require 'loader'
 require 'archiver'
 
-class EC2
+class AWS_Utils
   include Archiver
   include Loader
 
